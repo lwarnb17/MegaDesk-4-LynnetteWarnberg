@@ -12,7 +12,7 @@ namespace MegaDesk_3_LynnetteWarnberg
 {
     public partial class DisplayQuote : Form
     {
-        public DisplayQuote()
+        public DisplayQuote(DeskQuote deskQuote)
         {
             InitializeComponent();
         }

@@ -6,7 +6,24 @@ using System.Threading.Tasks;
 
 namespace MegaDesk_3_LynnetteWarnberg
 {
-    class Desk
+    public class Desk
     {
+        //enums
+        public enum Surface
+        {
+            Laminate,
+            Oak,
+            Rosewood,
+            Veneer,
+            Pine
+        }
+        //Properties
+        public decimal Width { get; set; }
+
+        public decimal Depth { get; set; }
+
+        public int NumberOfDrawers { get; set; }
+
+        public Surface SurfaceMaterial { get; set; }
     }
 }
