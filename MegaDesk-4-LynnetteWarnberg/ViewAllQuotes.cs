@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace MegaDesk_3_LynnetteWarnberg
 {
@@ -15,13 +16,28 @@ namespace MegaDesk_3_LynnetteWarnberg
         public ViewAllQuotes()
         {
             InitializeComponent();
+
+            loadGrid();
         }
-        //private void cancelQuoteButton(object sender, EventArgs e)
-        //{
-        //    var mainMenu = (MainMenu)Tag;
-        //    mainMenu.Show();
-        //    Close();
-        //}
+        
+        private void loadGrid()
+        {
+            try
+            {
+                string[] deskQuotes = File.ReadAllLines(@"quotes.text");
+
+                foreach (string deskQuote in deskQuotes)
+                {
+                    string[] arrRow = deskQuote.Split(new char[] { ',' });
+                    
+                    dataViewAllQuotes.Rows.Add(arrRow);
+                }
+            }
+            catch (FileNotFoundException)
+            {
+                MessageBox.Show("No Qoutes have been created.");
+            }
+        }
 
         private void cancelQuoteButton_Click(object sender, EventArgs e)
         {

@@ -44,7 +44,7 @@
             this.numDrawerNumber = new System.Windows.Forms.NumericUpDown();
             this.numberOfDrawers = new System.Windows.Forms.Label();
             this.delivery = new System.Windows.Forms.Label();
-            this.deliveryTime = new System.Windows.Forms.ComboBox();
+            this.deliveryTimeDropDown = new System.Windows.Forms.ComboBox();
             this.DeskSize.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.depthNumber)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.widthNumber)).BeginInit();
@@ -118,7 +118,9 @@
             // 
             // depthNumber
             // 
+            this.depthNumber.AllowDrop = true;
             this.depthNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.depthNumber.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.depthNumber.Location = new System.Drawing.Point(475, 42);
             this.depthNumber.Maximum = new decimal(new int[] {
             48,
@@ -198,7 +200,10 @@
             // 
             // surfaceMaterialDropDown
             // 
+            this.surfaceMaterialDropDown.BackColor = System.Drawing.SystemColors.Menu;
+            this.surfaceMaterialDropDown.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.surfaceMaterialDropDown.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.surfaceMaterialDropDown.ForeColor = System.Drawing.SystemColors.WindowText;
             this.surfaceMaterialDropDown.FormattingEnabled = true;
             this.surfaceMaterialDropDown.Location = new System.Drawing.Point(475, 37);
             this.surfaceMaterialDropDown.Name = "surfaceMaterialDropDown";
@@ -242,23 +247,25 @@
             this.delivery.TabIndex = 8;
             this.delivery.Text = "Delivery:";
             // 
-            // deliveryTime
+            // deliveryTimeDropDown
             // 
-            this.deliveryTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.deliveryTime.FormattingEnabled = true;
-            this.deliveryTime.Items.AddRange(new object[] {
+            this.deliveryTimeDropDown.BackColor = System.Drawing.SystemColors.Menu;
+            this.deliveryTimeDropDown.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.deliveryTimeDropDown.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.deliveryTimeDropDown.FormattingEnabled = true;
+            this.deliveryTimeDropDown.Items.AddRange(new object[] {
             " "});
-            this.deliveryTime.Location = new System.Drawing.Point(427, 448);
-            this.deliveryTime.Name = "deliveryTime";
-            this.deliveryTime.Size = new System.Drawing.Size(290, 37);
-            this.deliveryTime.TabIndex = 9;
+            this.deliveryTimeDropDown.Location = new System.Drawing.Point(427, 448);
+            this.deliveryTimeDropDown.Name = "deliveryTimeDropDown";
+            this.deliveryTimeDropDown.Size = new System.Drawing.Size(290, 37);
+            this.deliveryTimeDropDown.TabIndex = 9;
             // 
             // AddQuote
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(822, 610);
-            this.Controls.Add(this.deliveryTime);
+            this.Controls.Add(this.deliveryTimeDropDown);
             this.Controls.Add(this.delivery);
             this.Controls.Add(this.deskSpec);
             this.Controls.Add(this.DeskSize);
@@ -270,6 +277,7 @@
             this.Name = "AddQuote";
             this.Text = "Add New Quote";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.AddQuote_FormClosing);
+            this.Load += new System.EventHandler(this.AddQuote_Load);
             this.DeskSize.ResumeLayout(false);
             this.DeskSize.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.depthNumber)).EndInit();
@@ -300,6 +308,6 @@
         private System.Windows.Forms.NumericUpDown numDrawerNumber;
         private System.Windows.Forms.Label numberOfDrawers;
         private System.Windows.Forms.Label delivery;
-        private System.Windows.Forms.ComboBox deliveryTime;
+        private System.Windows.Forms.ComboBox deliveryTimeDropDown;
     }
 }

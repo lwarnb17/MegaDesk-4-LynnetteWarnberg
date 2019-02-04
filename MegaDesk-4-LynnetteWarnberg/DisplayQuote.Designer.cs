@@ -38,6 +38,12 @@
             this.lbDelivery = new System.Windows.Forms.Label();
             this.lbQuoteAmount = new System.Windows.Forms.Label();
             this.btnCancel = new System.Windows.Forms.Button();
+            this.widthAnswer = new System.Windows.Forms.Label();
+            this.depthAnswer = new System.Windows.Forms.Label();
+            this.surfaceMaterial = new System.Windows.Forms.Label();
+            this.delivery = new System.Windows.Forms.Label();
+            this.numOfDrawers = new System.Windows.Forms.Label();
+            this.quoteAmount = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // DisplayLabel
@@ -138,12 +144,73 @@
             this.btnCancel.TabIndex = 9;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            // 
+            // widthAnswer
+            // 
+            this.widthAnswer.AutoSize = true;
+            this.widthAnswer.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.widthAnswer.Location = new System.Drawing.Point(366, 208);
+            this.widthAnswer.Name = "widthAnswer";
+            this.widthAnswer.Size = new System.Drawing.Size(0, 29);
+            this.widthAnswer.TabIndex = 10;
+            // 
+            // depthAnswer
+            // 
+            this.depthAnswer.AutoSize = true;
+            this.depthAnswer.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.depthAnswer.Location = new System.Drawing.Point(366, 270);
+            this.depthAnswer.Name = "depthAnswer";
+            this.depthAnswer.Size = new System.Drawing.Size(0, 29);
+            this.depthAnswer.TabIndex = 11;
+            // 
+            // surfaceMaterial
+            // 
+            this.surfaceMaterial.AutoSize = true;
+            this.surfaceMaterial.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.surfaceMaterial.Location = new System.Drawing.Point(677, 208);
+            this.surfaceMaterial.Name = "surfaceMaterial";
+            this.surfaceMaterial.Size = new System.Drawing.Size(0, 29);
+            this.surfaceMaterial.TabIndex = 12;
+            // 
+            // delivery
+            // 
+            this.delivery.AutoSize = true;
+            this.delivery.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.delivery.Location = new System.Drawing.Point(590, 270);
+            this.delivery.Name = "delivery";
+            this.delivery.Size = new System.Drawing.Size(0, 29);
+            this.delivery.TabIndex = 13;
+            // 
+            // numOfDrawers
+            // 
+            this.numOfDrawers.AutoSize = true;
+            this.numOfDrawers.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.numOfDrawers.Location = new System.Drawing.Point(366, 325);
+            this.numOfDrawers.Name = "numOfDrawers";
+            this.numOfDrawers.Size = new System.Drawing.Size(0, 29);
+            this.numOfDrawers.TabIndex = 14;
+            // 
+            // quoteAmount
+            // 
+            this.quoteAmount.AutoSize = true;
+            this.quoteAmount.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.quoteAmount.Location = new System.Drawing.Point(366, 403);
+            this.quoteAmount.Name = "quoteAmount";
+            this.quoteAmount.Size = new System.Drawing.Size(0, 29);
+            this.quoteAmount.TabIndex = 15;
             // 
             // DisplayQuote
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(852, 582);
+            this.Controls.Add(this.quoteAmount);
+            this.Controls.Add(this.numOfDrawers);
+            this.Controls.Add(this.delivery);
+            this.Controls.Add(this.surfaceMaterial);
+            this.Controls.Add(this.depthAnswer);
+            this.Controls.Add(this.widthAnswer);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.lbQuoteAmount);
             this.Controls.Add(this.lbDelivery);
@@ -154,6 +221,7 @@
             this.Controls.Add(this.txtCustomerName);
             this.Controls.Add(this.CustomerName);
             this.Controls.Add(this.DisplayLabel);
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "DisplayQuote";
             this.Text = "DisplayQuote";
             this.ResumeLayout(false);
@@ -173,5 +241,11 @@
         private System.Windows.Forms.Label lbDelivery;
         private System.Windows.Forms.Label lbQuoteAmount;
         private System.Windows.Forms.Button btnCancel;
+        private System.Windows.Forms.Label widthAnswer;
+        private System.Windows.Forms.Label depthAnswer;
+        private System.Windows.Forms.Label surfaceMaterial;
+        private System.Windows.Forms.Label delivery;
+        private System.Windows.Forms.Label numOfDrawers;
+        private System.Windows.Forms.Label quoteAmount;
     }
 }

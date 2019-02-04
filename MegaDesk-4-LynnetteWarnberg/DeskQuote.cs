@@ -66,11 +66,90 @@ namespace MegaDesk_3_LynnetteWarnberg
             {
                 surfacePrice = (surfaceArea - 1000) * SURFACE_AREA_COST;
             }
+
+            var NumOfDrawersPrice = Desk.NumberOfDrawers * 50;
+
+            var surfaceMaterialPrice = 0;
+            switch (Desk.SurfaceMaterial)
+            {
+                case Desk.Surface.Oak:
+                    surfaceMaterialPrice = 200;
+                    break;
+
+                case Desk.Surface.Laminate:
+                    surfaceMaterialPrice = 100;
+                    break;
+
+                case Desk.Surface.Pine:
+                    surfaceMaterialPrice = 50;
+                    break;
+
+                case Desk.Surface.Rosewood:
+                    surfaceMaterialPrice = 300;
+                    break;
+
+                case Desk.Surface.Veneer:
+                    surfaceMaterialPrice = 125;
+                    break;
+            }
+
+            var shippingPrice = 0;
+            switch (DeliveryType)
+            {
+                case Delivery.Day3Rush:
+                    if (surfaceArea < 1000)
+                    {
+                        shippingPrice = 60;
+                    }
+                    else if (surfaceArea < 2000)
+                    {
+                        shippingPrice = 70;
+                    }
+                    else
+                    {
+                        shippingPrice = 80;
+                    }
+                    break;
+
+                case Delivery.Day5Rush:
+                    if (surfaceArea < 1000)
+                    {
+                        shippingPrice = 40;
+                    }
+                    else if (surfaceArea < 2000)
+                    {
+                        shippingPrice = 50;
+                    }
+                    else
+                    {
+                        shippingPrice = 60;
+                    }
+                    break;
+
+                case Delivery.Day7Rush:
+                    if (surfaceArea < 1000)
+                    {
+                        shippingPrice = 30;
+                    }
+                    else if (surfaceArea < 2000)
+                    {
+                        shippingPrice = 35;
+                    }
+                    else
+                    {
+                        shippingPrice = 40;
+                    }
+                    break;
+
+                default:
+                    shippingPrice = 0;
+                    break;
+            }
+
+            quotePrice = 200 + surfacePrice + NumOfDrawersPrice + surfaceMaterialPrice + shippingPrice;
+
             return quotePrice;
         }
-
-
     }
-
      
-   }
+  }

@@ -44,20 +44,8 @@ namespace MegaDesk_3_LynnetteWarnberg
         }
         private void AddQuote_FormClosing(object sender, FormClosingEventArgs e)
         {
-            //var mainMenu = (MainMenu)Tag;
-            //mainMenu.Show();
-
-            //populate materials combobox
-            var materials = new List<Desk.Surface>();
-
-            materials = Enum.GetValues(typeof(Desk.Surface))
-                            .Cast<Desk.Surface>()
-                            .ToList();
-
-            surfaceMaterialDropDown.DataSource = materials;
-
-            //set default to empy
-            surfaceMaterialDropDown.SelectedIndex = -1;
+            var mainMenu = (MainMenu)Tag;
+            mainMenu.Show();
 
         }
 
@@ -77,7 +65,7 @@ namespace MegaDesk_3_LynnetteWarnberg
                 Desk = desk,
                 CustomerName = txtCustomerName.Text, 
                 QuoteDate = DateTime.Now,
-                DeliveryType = (DeskQuote.Delivery)deliveryTime.SelectedValue
+                DeliveryType = (DeskQuote.Delivery)deliveryTimeDropDown.SelectedValue
             };
 
             try
@@ -102,6 +90,41 @@ namespace MegaDesk_3_LynnetteWarnberg
             {
                 MessageBox.Show("THERE was an error creating the quote. {0}", err.Message);
             }
+
+            
+            
+
+        }
+
+        private void AddQuote_Load(object sender, EventArgs e)
+        {
+            //populate materials combobox
+            var materials = new List<Desk.Surface>();
+
+            materials = Enum.GetValues(typeof(Desk.Surface))
+                            .Cast<Desk.Surface>()
+                            .ToList();
+
+            surfaceMaterialDropDown.DataSource = materials;
+
+            //set default to empy
+            surfaceMaterialDropDown.SelectedIndex = -1;
+
+
+            //populate delivery combobox
+            var delivery = new List<DeskQuote.Delivery>();
+
+            delivery = Enum.GetValues(typeof(DeskQuote.Delivery))
+                            .Cast<DeskQuote.Delivery>()
+                            .ToList();
+
+            deliveryTimeDropDown.DataSource = delivery;
+
+            //set default to empy
+            deliveryTimeDropDown.SelectedIndex = -1;
+
+           
+
         }
     }
 }
